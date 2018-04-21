@@ -1,0 +1,19 @@
+{
+  "name": "chat-node",
+  "version": "0.0.1",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "ejs": "^2.5.8",
+    "express": "^4.15.5",
+    "geoip-lite": "^1.2.1",
+    "mongoose": "^4.12.1",
+    "nodemailer": "^4.6.4",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

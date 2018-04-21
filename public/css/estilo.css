@@ -1,0 +1,602 @@
+#chat{
+			height: 300;
+			overflow-y:scroll;
+		}
+		#contentWrap{
+			display: none;
+
+		}
+		#chatWrap{
+			float:  left;
+			border: 1px #000 solid;
+		}
+		.error{
+			color: red;
+		}
+		.whisper{
+			color: gray;
+			font-style: italic;: 
+		}
+		.ext {
+		  background: #009587;
+		  float: right;
+		  border-radius: 10px 0 10px 10px;
+		}
+
+		.int {
+		  background: #5F7C8A;
+		  float: left;
+		  border-radius: 10px 10px 10px 0;
+		}
+		.msg{
+	
+		}
+
+
+
+
+
+	.rolldown-list {
+	  text-align: left;
+	  padding: 0;
+	  margin: 0;
+	}
+
+	.rolldown-list li {
+	  padding: 1em;
+	  margin-bottom: .125em;
+	  display: block;
+	  list-style: none;
+	  text-transform: uppercase;
+	}
+
+	.rolldown-list li {
+	  visibility: hidden;
+	  -webkit-animation: rolldown .7s 1;
+	          animation: rolldown .7s 1;
+	  -webkit-transform-origin: 50% 0;
+	          transform-origin: 50% 0;
+	  -webkit-animation-fill-mode: forwards;
+	          animation-fill-mode: forwards;
+	}
+
+	.rolldown-list li:nth-child(2n) {
+	  background-color: #444;
+	}
+
+	.rolldown-list li:nth-child(2n+1) {
+	  background-color: #333;
+	}
+
+	#myList {
+		color: #fff;
+	 position: absolute; 
+	  width: 200;
+	  left: 65%;
+	  margin-left: -25%;
+	}
+
+	#btnReload {
+	  float: right;
+	  color: #333;
+	  background: #ccc;
+	  text-transform: uppercase;
+	  border: none;
+	  padding: .5em 1em;
+	}
+
+	#btnReload:hover {
+	  background: #ddd;
+	}
+
+	@-webkit-keyframes rolldown {
+	  0% {
+	    visibility: visible;
+	    -webkit-transform: rotateX(180deg) perspective(500px);
+	            transform: rotateX(180deg) perspective(500px);
+	  }
+	  70% {
+	    visibility: visible;
+	    -webkit-transform: rotateX(-20deg);
+	            transform: rotateX(-20deg);
+	  }
+	  100% {
+	    visibility: visible;
+	    -webkit-transform: rotateX(0deg);
+	            transform: rotateX(0deg);
+	  }
+	}
+
+	@keyframes rolldown {
+	  0% {
+	    visibility: visible;
+	    -webkit-transform: rotateX(180deg) perspective(500px);
+	            transform: rotateX(180deg) perspective(500px);
+	  }
+	  70% {
+	    visibility: visible;
+	    -webkit-transform: rotateX(-20deg);
+	            transform: rotateX(-20deg);
+	  }
+	  100% {
+	    visibility: visible;
+	    -webkit-transform: rotateX(0deg);
+	            transform: rotateX(0deg);
+	  }
+	}
+
+
+	/*
+	  White
+	*/
+	#chat::-webkit-scrollbar {
+	  width: 8px;
+	  height: 8px;
+	}
+	#chat::-webkit-scrollbar-track {
+	  border-radius: 10px;
+	  background: rgba(0,0,0,0.1);
+	  border: 1px solid #ccc;
+	}
+	#chat::-webkit-scrollbar-thumb {
+	  border-radius: 10px;
+	  background: linear-gradient(left, #fff, #e4e4e4);
+	  border: 1px solid #aaa;
+	}
+	#chat::-webkit-scrollbar-thumb:hover {
+	  background: #fff;
+	}
+	#chat::-webkit-scrollbar-thumb:active{
+	  background: linear-gradient(left, #22ADD4, #1E98BA);
+	}
+
+
+
+	/** chat box **/
+	@charset "utf-8";
+	/* CSS Document */
+
+	/* ---------- GENERAL ---------- */
+
+
+	a { text-decoration: none; }
+
+	fieldset {
+		border: 0;
+		margin: 0;
+		padding: 0;
+	}
+
+	h4, h5 {
+		line-height: 1.5em;
+		margin: 0;
+	}
+
+	hr {
+		background: #e9e9e9;
+	    border: 0;
+	    -moz-box-sizing: content-box;
+	    box-sizing: content-box;
+	    height: 1px;
+	    margin: 0;
+	    min-height: 1px;
+	}
+
+	img {
+	    border: 0;
+	    display: block;
+	    height: auto;
+	    max-width: 100%;
+	}
+
+	input {
+		border: 1;
+		color: inherit;
+	    font-family: inherit;
+	    font-size: 100%;
+	    line-height: normal;
+	    margin: 0;
+	}
+
+	p { margin: 0; }
+
+	.clearfix { *zoom: 1; } /* For IE 6/7 */
+	.clearfix:before, .clearfix:after {
+	    content: "";
+	    display: table;
+	}
+	.clearfix:after { clear: both; }
+
+	/* ---------- LIVE-CHAT ---------- */
+
+	#live-chat {
+		bottom: 0;
+		font-size: 12px;
+		right: 24px;
+		position: fixed;
+		width: 300px;
+	}
+
+	#live-chat header {
+		background: #293239;
+		border-radius: 5px 5px 0 0;
+		color: #fff;
+		cursor: pointer;
+		padding: 16px 24px;
+	}
+
+	#live-chat h4:before {
+		background: #1a8a34;
+		border-radius: 50%;
+		content: "";
+		display: inline-block;
+		height: 8px;
+		margin: 0 8px 0 0;
+		width: 8px;
+	}
+
+	#live-chat h4 {
+		font-size: 12px;
+	}
+
+	#live-chat h5 {
+		font-size: 10px;
+	}
+
+	#live-chat form {
+		padding: 24px;
+	}
+
+	#live-chat input[type="text"] {
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		padding: 8px;
+		outline: none;
+		width: 234px;
+	}
+
+	.chat-message-counter {
+		background: #e62727;
+		border: 1px solid #fff;
+		border-radius: 50%;
+		display: none;
+		font-size: 12px;
+		font-weight: bold;
+		height: 28px;
+		left: 0;
+		line-height: 28px;
+		margin: -15px 0 0 -15px;
+		position: absolute;
+		text-align: center;
+		top: 0;
+		width: 28px;
+	}
+
+	.chat-close {
+		background: #1b2126;
+		border-radius: 50%;
+		color: #fff;
+		display: block;
+		float: right;
+		font-size: 10px;
+		height: 16px;
+		line-height: 16px;
+		margin: 2px 0 0 0;
+		text-align: center;
+		width: 16px;
+	}
+
+	.chat {
+		background: #fff;
+	}
+
+	.chat-history {
+		height: 252px;
+		padding: 8px 24px;
+		overflow-y: scroll;
+	}
+
+	.chat-message {
+		margin: 16px 0;
+	}
+
+	.chat-message img {
+		border-radius: 50%;
+		float: left;
+	}
+
+	.chat-message-content {
+		margin-left: 56px;
+	}
+
+	.chat-time {
+		float: right;
+		font-size: 10px;
+	}
+
+	.chat-feedback {
+		font-style: italic;	
+		margin: 0 0 0 80px;
+	}
+
+	/** chat fin **/
+
+/* cajita de texto */
+
+
+ #typing {
+ 	margin-top: 10px;
+background-color: magenta; width: 100px;
+                    height: 14px; margin: 0 auto; text-align: center;
+                        background: #868686;
+                         border-radius: 25px;
+    padding: 1; 
+    width: 100px;
+    height: 14px;
+    font-size: 11px; 
+    color: #fff;
+    font-family: "Times New Roman", Times, serif;
+    display: none;
+}
+
+* {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.parpadea {
+  
+  animation-name: parpadeo;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name:parpadeo;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+   100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+  0% { opacity: 1.0; }
+   50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+#contact {
+  height: auto;
+  background: #ececec;
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:100px;
+}
+#contact header {
+    padding: 10px;
+    background: #333;
+    color: #FFF;
+}
+#contact main { 
+    padding: 10px
+}
+#chatp {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 100px;
+    height: unset;
+}
+#chatp .user {
+    border: 1px solid #333;
+    background: #fff;
+    width: 270px;
+    height: 100%;
+    float: left;
+    margin-right: 5px;
+}
+.user header {
+    position: relative;
+		/*background: #4b67a8; */
+		
+		background: rgb(197,222,234); /* Old browsers */
+		background: -moz-linear-gradient(top, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 12%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 12%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 12%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6-9 */
+		
+
+    border: 1px solid #2e4588;
+	}
+	.user header .status {
+			position: absolute;
+			top: 36%;
+			left: 10px;
+			width: 8px;
+			height: 8px;
+			-webkit-border-radius: 4px; 
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+			background: green;
+	}
+
+
+.user header .statusOff {
+    position: absolute;
+    top: 36%;
+    left: 10px;
+    width: 8px;
+    height: 8px;
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background: red;
+}
+.user header .header-text {
+    color: #fff;
+		font-weight: bold;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 8px;
+    margin: 0 0 0 15px;
+    font-size: 12px;
+    text-shadow: 0 -1px rgba(0, 0, 0, .25);
+}
+.user header .close { 
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    color: #fff;
+}
+.message-area {
+    background: #fff;
+    height: 225px;
+    padding: 5px;
+    color: #333;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.user .input-area {
+    border-top: 1px solid #868686;
+    padding: 3px;
+}
+.user .input-area input {
+    padding: 5px;
+    width: 100%;
+    font-size: 12px;
+    border: none;
+    outline: none;
+}
+
+/* fin cajita */
+
+
+/* Gradient 1 */
+#g1 {
+  background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+}
+
+/* Gradient 2 */
+#g2 {
+  background: linear-gradient(90deg, #cfecd0, #ffc5ca);
+}
+
+/* Gradient 3 */
+.g3 {
+  background: linear-gradient(90deg, #f598a8, #f6edb2);
+}
+
+/* Gradient 4 */
+.g4 {
+  background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+}
+
+/* Gradient 5 */
+.g5 {
+  background: linear-gradient(90deg, #b9deed, #efefef);
+}
+
+/* Gradient 6 */
+.g6 {
+  background: linear-gradient(90deg, #aea4e3, #d3ffe8);
+}
+
+/* Gradient 7 */
+.g7 {
+  background: linear-gradient(90deg, #faf0cd, #fab397);
+}
+
+/* Gradient 8 */
+.g8 {
+  background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+}
+
+.gAzul{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c5deea+0,8abbd7+12,066dab+100 */
+background: rgb(197,222,234); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(197,222,234,1) 0%, rgba(138,187,215,1) 12%, rgba(6,109,171,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 12%,rgba(6,109,171,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(197,222,234,1) 0%,rgba(138,187,215,1) 12%,rgba(6,109,171,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5deea', endColorstr='#066dab',GradientType=0 ); /* IE6-9 */
+}
+
+.gBlanco{
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f6f8f9+0,e5ebee+50,d7dee3+51,f5f7f9+100;White+Gloss */
+background: rgb(246,248,249); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(246,248,249,1) 0%, rgba(229,235,238,1) 50%, rgba(215,222,227,1) 51%, rgba(245,247,249,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f8f9', endColorstr='#f5f7f9',GradientType=0 ); /* IE6-9 */
+}
+
+.message-box {
+  padding: 6px 10px;
+  border-radius: 6px 0 6px 0;
+  position: relative;
+  background: rgba(100, 170, 0, .1);
+  border: 2px solid rgba(100, 170, 0, .1);
+  color: #6c6c6c;
+  font-size: 12px;
+}
+
+.message-box:after {
+  content: "";
+  position: absolute;
+  border: 10px solid transparent;
+  border-top: 10px solid rgba(100, 170, 0, .2);
+  border-right: none;
+  bottom: -22px;
+  right: 10px;
+}
+
+
+
+
+.message-partner {
+  background: rgba(0, 114, 135, .1);
+  border: 2px solid rgba(0, 114, 135, .1);
+  align-self: flex-start;
+}
+
+.message-partner:after {
+  right: auto;
+  bottom: auto;
+  top: -22px;
+  left: 9px;
+  border: 10px solid transparent;
+  border-bottom: 10px solid rgba(0, 114, 135, .2);
+  border-left: none;
+}
+
+
+
+.message-box-holder {
+  width: 100%;
+  margin: 0 0 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.message-sender {
+  font-size: 12px;
+  margin: 0 0 5px;
+  color: #30649c;
+  align-self: flex-start;
+}
+
+.message-sender a, .message-sender a:link, .message-sender a:visited, .chat-partner-name a, .chat-partner-name a:link, .chat-partner-name a:visited {
+  color: #30649c;
+  text-decoration: none;
+}

@@ -1,0 +1,42 @@
+.emoticsize
+{
+    width: 10px;
+    height: 10px;
+    padding: 10px;
+    background-position: center; 
+}
+
+.emotic-happy
+{
+    background-image: url("../img/emotic/happy.png");
+}
+
+.emotic-sad
+{
+    background-image: url("../img/emotic/sad.png");
+}
+.emotic-miedo
+{
+    background-image: url("../img/emotic/miedo.png");
+}
+.emotic-nerd
+{
+    background-image: url("../img/emotic/nerd.png");
+}
+.emotic-superhappy
+{
+    background-image: url("../img/emotic/superhappy.png");
+}
+
+.emotic-feliz
+{
+    background-image: url("../img/emotic/feliz.png");
+}
+
+.emotic-lengua
+{
+    background-image: url("../img/emotic/lengua.png");
+}
+
+
+

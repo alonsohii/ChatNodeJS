@@ -1,0 +1,204 @@
+<html>
+
+<head>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/Popup-plugin.css">
+    <link rel="stylesheet" type="text/css" href="css/PopupAdded.css">
+    <link rel="stylesheet" type="text/css" href="css/emotics.css">
+
+    <script src="js/chatbox.js"></script>
+    <script src="js/Popup-plugin.js"></script>
+    <script src="js/Popup.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/chatbox.css">
+</head>
+
+<body>
+
+    <div class="container app" id="user1">
+        <div class="row app-one">
+            <div class="col-sm-3 side" style="display: table-column;">
+                <div class="side-one" id="user1left">
+                    <div class="row heading">
+                            Informacion:
+                        <div class="col-sm-3 col-xs-3 heading-avatar">
+                              
+                            <div class="heading-avatar-icon">
+                                <img src="img/avatar/men.png">
+                            </div>
+                        </div>
+                        <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+                            <i class="fa fa-ellipsis-v fa-1x  pull-right" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-sm-2 col-xs-2 heading-compose  pull-right">
+                           
+                        </div>
+                    </div>
+
+                    <div class="formChat">
+                        <form action="/action_page.php">
+                            <div class="form-group">
+                               
+                                <input class="form-control form-control-sm" type="text" placeholder="Nombre usuario">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control form-control-sm" type="text" placeholder="Correo">
+                            </div>
+                            <!--   <div class="form-group">
+                                        <input class="form-control form-control-sm" type="text" placeholder="Telefono">
+                                 </div> -->
+                            <textarea class="form-control" placeholder="Comentarios..." rows="5" id="comment"></textarea>
+
+                            <button type="submit" class="btn btn-default">Guardar</button>
+                        </form>
+                    </div>
+
+                    <div class="infoUsuario">
+                        <div class="form-group row">
+                            <label for="staticEmail" class="col-sm-1 col-form-label">Sitio:</label>
+                            <div class="col-sm-10">
+                                www.google.com
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Ubicacion:</label>
+                            <div class="col-sm-10">
+                                Bogota,Colombia
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Sistema:</label>
+                            <div class="col-sm-10">
+                                Windows 10
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-3 col-form-label">Navegador:</label>
+                            <div class="col-sm-10">
+                                Chrome
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-5 col-form-label">IP Adress:</label>
+                            <div class="col-sm-10">
+                                1.2.2.2.2
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-5 col-form-label">User Agent:</label>
+                                <div class="col-sm-10">
+                                    Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36
+                                </div>
+                            </div>
+                    </div>
+
+                </div>
+
+                <div class="side-two">
+                    <div class="row newMessage-heading">
+                        <div class="row newMessage-main">
+                            <div class="col-sm-2 col-xs-2 newMessage-back">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-sm-10 col-xs-10 newMessage-title">
+                                New Chat
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row composeBox">
+                        <div class="col-sm-12 composeBox-inner">
+                            <div class="form-group has-feedback">
+                                <input id="composeText" type="text" class="form-control" name="searchText" placeholder="Search People">
+                                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 conversation">
+                <div class="row heading">
+
+                        <button type="button" class="btn btn-primary btn-sm" style="margin-top:-7px;">Ver historial Chat</button>
+                    <div class="col-sm-1 col-md-1 col-xs-3 heading-avatar">
+                        <div class="heading-avatar-icon">
+                            <img src="img/avatar/men.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-8 col-xs-7 heading-name">
+                        <a class="heading-name-meta">Demo user
+              </a>
+                        <span class="heading-online">Online</span>
+                    </div>
+                    <div class="col-sm-1 col-xs-1  heading-dot pull-right">
+                        <i class="fa fa-ellipsis-v fa-1x  pull-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="row message" id="conversation">
+                    <div class="row message-previous">
+                        <div class="col-sm-12 previous">
+                            <a onclick="previous(this)" id="ankitjain28" name="20">
+
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row message-body">
+                        <div class="col-sm-12 message-main-receiver">
+                            <div class="receiver">
+                                <div class="message-text">
+                                    Hola , como estas
+
+                                </div>
+                                <span class="message-time pull-right">
+                    7:22
+                  </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row message-body">
+                        <div class="col-sm-12 message-main-sender">
+                            <div class="sender">
+                                <div class="message-text">
+                                    Bien y tu?
+                                </div>
+                                <span class="message-time pull-right">
+                    8:22
+                  </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row reply">
+                    <div class="col-sm-1 col-xs-1 reply-emojis">
+
+                        <div id="myPopUp" name="menu1" class="" style="left: 36%">
+                            <i class="fa fa-smile-o fa-2x leftBorder rightBorder"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-xs-9 reply-main">
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                    </div>
+                    <div class="col-sm-1 col-xs-1 reply-recording">
+                        <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-sm-1 col-xs-1 reply-send">
+                        <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
