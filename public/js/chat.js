@@ -14,12 +14,19 @@
 		var $messageBox = $('#message');
 		var $chat = $('#chat');
 	
-		
+		debugger;
 
 		$nickForm.submit(function(e){
 			e.preventDefault();
 			//username = $nickBox.val();
-			username  = "usr"+Date.now();
+			if(papa ==1)
+			{
+				username  = "papa";
+			}else
+			{
+				username  = "usr"+Date.now();
+			}
+			
 			$('#namelocal').html(username);
 			socket.emit('new user',username,function(data){
 				if(data){

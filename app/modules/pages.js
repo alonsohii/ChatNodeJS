@@ -10,6 +10,7 @@ module.exports = function(params,callback) {
 	//this.app.post('/usuario', this.UsuariosCtrl.InsertarUsuario );
 
     params.Helper.Pagina('/panel','panel',{ title: "Panel Chat"},params.app);
+    params.Helper.Pagina('/admin','admin',{ title: "Reset Chat"},params.app);
     params.Helper.Pagina('/reset','reset',{ title: "Reset Chat"},params.app);
 
 

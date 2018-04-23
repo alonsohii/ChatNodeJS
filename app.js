@@ -36,6 +36,11 @@ app.get('/' , function(req,res){
 	res.sendfile(__dirname+'/index.html');
 });
 
+app.get('/test' , function(req,res){
+	var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+	res.sendfile(__dirname+'/testing.html');
+});
+
 
 app.get('/ip' , function(req,res){
 	geoip = require('geoip-lite');
@@ -60,7 +65,7 @@ io.sockets.on('connection',function(socket){
 	
 	socket.on('new user',function(data,callback){
 		if(data in users){  // icknames.indexOf(data) != -1
-			callback(false);
+			callback(true);
 		}else{
 			callback(true);
 			socket.nickname = data;
