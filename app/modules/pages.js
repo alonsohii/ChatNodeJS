@@ -6,15 +6,17 @@ module.exports = function(params,callback) {
     this.Helper = params.Helper;
     this.app = params.app;
     */
-
+     var app = params.app;
 	//this.app.post('/usuario', this.UsuariosCtrl.InsertarUsuario );
 
-    params.Helper.Pagina('/panel','panel',{ title: "Panel Chat"},params.app);
-    params.Helper.Pagina('/admin','admin',{ title: "Reset Chat"},params.app);
-    params.Helper.Pagina('/reset','reset',{ title: "Reset Chat"},params.app);
+    params.Helper.Pagina('/panel','panel',{ title: "Panel Chat"},app);
+    params.Helper.Pagina('/admin','admin',{ title: "Admin Chat"},app);
+    params.Helper.Pagina('/reset','reset',{ title: "Reset Chat"},app);
+
+	params.Helper.Pagina('/registro','registro',{ title: "Registro de Usuarios"} , app);
+	params.Helper.Pagina('/login','login',{ title: "Registro de Usuarios"} , app);
 
 
-	
 
 //	this.app.get('/setup', this.UsuariosCtrl.UsuarioMongoDb);
 

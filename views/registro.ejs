@@ -1,0 +1,255 @@
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+    <script type="text/javascript" src="http://alasql.org/codex/lib/alasql/alasql.min.js"></script>
+    <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src=" ../js/adicional.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="../css/adicional.css">
+
+    <script>
+        $(document).ready(function() {
+            //$("#Notificacion").hide();
+            // $("#Correcto").hide();
+            $("#registro").click(function() {
+
+                var nombre = $("#firstName").val(),
+                    facebook = $("#facebook").val(),
+                    pw = $("#pw").val(),
+                    pw2 = $("#pw2").val(),
+                    email = $("#email").val(),
+                    pais = $("#ComboPaises").val();
+
+                var esvalido = false;
+                var campos = ["Nombre", "Email", "Password"];
+                var valores = [nombre, email, pw];
+                esvalido = validarCampos(valores, campos);
+
+                if (esvalido) {
+                    if (pw == pw2) {
+
+                        $("#Notificacion").hide(350);
+                        $.post("http://localhost:8080/usuario", CamposJson('#firstName,#pw,#email,#ComboPaises'))
+                            .done(function(data) {
+
+                                if (data.usuario == 1 && !data.success) {
+                                    Error('Este usuario ya se encuentra registrado.');
+                                } else {
+
+                                    if (!data.success) {
+                                        Error('Este correo ya se encuentra registrado.');
+                                    } else {
+                                        $("#Correcto").hide(50);
+                                        $("#Correcto").show(350);
+                                    }
+                                }
+
+                            });
+
+                    } else {
+                        Error('La contrasena no coincide.');
+
+                    }
+                } else {
+
+                }
+
+            });
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <%- include('header'); %>
+
+        <div class="container containerBorder">
+            <div class="row">
+                <div class="col-xs-12" id="demoContainer">
+                    <div class="alert alert-success" id="Correcto" style="display:none">
+                        <strong>Bien!</strong> Registro Hecho exitosamente.
+                    </div>
+                    <div class="alert alert-danger" id="Notificacion" style="display:none">
+                        <strong>Error!</strong>
+                        <p id="textnot"></p>
+                    </div>
+                    <div id="registrationForm2" class="form-horizontal fv-form fv-form-bootstrap" novalidate="novalidate" target="none" action="">
+                        <!--  <button type="submit" class="fv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button> -->
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label">
+                                <%- ln.__('username'); %>
+                            </label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Nombre de usuario ej:pamfilo" />
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label" tkey="email">
+                                <%- ln.__('email'); %>
+                            </label>
+                            <div class="col-xs-5">
+                                <input type="text" class="form-control" name="email" id="email" placeholder="micorreo@correo.com" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label" tkey="password">
+                                <%- ln.__('password'); %>
+                            </label>
+                            <div class="col-xs-5">
+                                <input type="password" class="form-control" name="pw" id="pw" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-3 control-label" tkey="password2">
+                                <%- ln.__('password2'); %>
+                            </label>
+                            <div class="col-xs-5">
+                                <input type="password" class="form-control" name="pw2" id="pw2" />
+                            </div>
+                        </div>
+
+                        <script>
+                            $(function() {
+
+                                $.when($.get("http://localhost:8080/paises", function(data, status) {
+
+                                    jQuery.data(document, "paises", data);
+                                    //console.log("Data: " + data + "\nStatus: " + status);
+                                })).then(function(data, textStatus, jqXHR) {
+                                    // Paises();
+
+                                    ComboPaises();
+
+                                    // GroupBy(jQuery.data( document, "paises"));
+                                    // alert( jqXHR.status ); // Alerts 200
+                                });
+
+                            });
+
+                            function Where(data, value) {
+                                return _.filter(data, function(item, index) {
+                                    return _.contains([value], item.iso);
+                                });
+
+                            }
+                            var adress;
+                            var idpais;
+
+                            function ComboPaises() {
+
+                                $.when($.getJSON('http://api.wipmania.com/jsonp?callback=?', function(data) {
+                                    adress = data.address.country;
+                                })).then(function(data, textStatus, jqXHR) {
+                                    $.each(GroupBy(jQuery.data(document, "paises")), function(i, l) {
+                                        $("#ComboPaises").append(" <option value='" + l.Id + "'>" + l.Pais + "</option>");
+                                        if (adress == l.Pais) {
+                                            idpais = l.Id;
+                                        }
+                                    });
+
+                                    $("#ComboPaises").val(idpais);
+
+                                });
+
+                            }
+
+                            function GroupBy(data) {
+
+                                return _
+                                    .chain(data)
+                                    .groupBy('Nombre')
+                                    .sort('Nombre')
+                                    .map(function(value, key) {
+                                        return {
+                                            Pais: key,
+                                            Id: value[0].id,
+                                            Iso: value[0].iso
+                                                // paises: _.pluck(value, 'Nombre')
+                                        }
+                                    })
+                                    .value();
+                            }
+                        </script>
+
+                        <!--  <div class="form-group">
+        <label class="col-xs-3 control-label">Selecciona Pais:</label>
+        <div class="col-xs-5 selectContainer">
+            <select class="form-control" name="color" id="ComboPaises">
+
+            </select>
+        </div>
+    </div> -->
+
+                        <div class="form-group">
+                            <!--  <label class="col-xs-3 control-label">Gender</label>
+       <div class="col-xs-6">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="male" /> Male
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="female" /> Female
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="gender" value="other" /> Other
+                </label>
+            </div>
+        </div> -->
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-xs-9 col-xs-offset-3">
+                                <button class="btn btn-primary" name="signup" value="Sign up" id='registro'>
+                                    <%- ln.__('botonregistro'); %>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</body>
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '1385758038128333',
+            cookie: true,
+            xfbml: true,
+            version: 'v2.8'
+        });
+        FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+</html>

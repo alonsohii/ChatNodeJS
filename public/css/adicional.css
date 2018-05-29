@@ -1,0 +1,654 @@
+.containerBorder {
+    padding-top: 30px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    vertical-align: middle;
+}
+
+.containderCustom{
+    padding-top:10px; 
+    margin-top: 0px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto
+}
+
+.gradientWhite4{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+nav{
+    margin: 0px;
+}
+
+@media (min-width:768px) {
+    .containderCustom {
+        width: 750px
+    }
+}
+
+@media (min-width:992px) {
+    .containderCustom {
+        width: 970px
+    }
+}
+
+@media (min-width:1200px) {
+    .containderCustom {
+        width: 1170px
+    }
+}
+
+.borderRadius {
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    border: 0px solid lightgray;
+}
+
+.transparente {
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+    /* For IE8 and earlier */
+}
+
+.gradientBlack {
+    background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
+    border-left: 1px solid #555;
+    border-right: 1px solid #777;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #333;
+    box-shadow: inset 0 1px 0 #999;
+    color: #fff;
+    font-weight: none;
+    padding: 7px 5px;
+    position: relative;
+    font-size: 13px;
+    text-shadow: 0 1px 0 #000;
+}
+
+
+
+.gradientBlackshort {
+    background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
+    border-left: 1px solid #555;
+    border-right: 1px solid #777;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #333;
+    box-shadow: inset 0 1px 0 #999;
+    color: #fff;
+    font-weight: none;
+    padding: 7px 5px;
+    position: relative;
+    font-size: 13px;
+ height:  30px;
+    text-shadow: 0 1px 0 #000;
+}
+
+.gradientWhite3{
+background: rgba(226,226,226,1);
+background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+}
+
+.textWhite {
+    color: white;
+    text-shadow: black 0.1em 0.1em 0.1em
+}
+
+.textBlack {
+    color: black;
+    text-shadow: black 0.1em 
+}
+
+.containerBorderLite {
+    border: 1px solid lightgray;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    margin: 1px;
+}
+
+.gradientBlue2 {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#6db3f2+0,54a3ee+50,3690f0+51,1e69de+100;Blue+Gloss+%233 */
+    background: #6db3f2;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de', GradientType=0);
+    /* IE6-9 */
+}
+
+.blackButton {
+    border: 0;
+    background: linear-gradient( to bottom, #444, #111);
+    color: #ccc;
+    border-radius: 10px;
+    padding: 10px 30px 12px;
+    outline: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.blackButton:hover,
+button:active {
+    background: black;
+}
+
+.boderRed {
+    border: 1px solid #ff0000;
+}
+
+.blueButton {
+    border: 0;
+    background: linear-gradient( to bottom, #1aa3ff, #007acc);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 30px 12px;
+    outline: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.blueButton:hover,
+button:active {
+    background: #1aa3ff;
+}
+
+.pa1 {
+    padding: 1px;
+}
+
+.pa2 {
+    padding: 2px;
+}
+
+.pa3 {
+    padding: 3px;
+}
+
+.pa4 {
+    padding: 4px;
+}
+
+.pa5 {
+    padding: 5px;
+}
+
+.pa6 {
+    padding: 6px;
+}
+
+.pa7 {
+    padding: 7px;
+}
+
+.pa8 {
+    padding: 8px;
+}
+
+.pa9 {
+    padding: 9px;
+}
+
+.pa10 {
+    padding: 10px;
+}
+
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Amaranth|Anton|Arimo|Baloo+Bhai|Baloo+Bhaina|Baloo+Thambi|Cantarell|Convergence|Cuprum|Days+One|Droid+Sans|Fjalla+One|Hammersmith+One|Jaldi|Lato|Montserrat|Open+Sans|Oswald|Overpass|Oxygen|PT+Sans|Quicksand|Roboto|Roboto+Condensed|Source+Sans+Pro|Ubuntu');
+
+/* properties of the page body */
+
+.subscribe:hover {
+    background-image: linear-gradient(220deg, rgba(255, 255, 255, 0.95) 0%, rgb(194, 233, 251) 110%);
+    box-shadow: 0 0 1px 1px #a1c3fe;
+    padding: 10px 50px 50px 50px;
+    margin: 2.5em auto 0 auto;
+    border-radius: 1px;
+    text-align: center;
+    width: 100%;
+    min-height: 110px;
+    height: auto;
+    color: #445963;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.02);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.02);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.02);
+    transition: all 200ms ease-in;
+    transform: scale(1.02);
+}
+
+
+/* properties of the subscribe card */
+
+.subscribe {
+    background-image: linear-gradient(220deg, rgba(255, 255, 255, 0.95) 0%, rgb(194, 233, 251) 110%);
+    box-shadow: 0 0 4px 1px #a1c3fe;
+    padding: 10px 50px 50px 50px;
+    margin: 2.5em auto 0 auto;
+    border-radius: 1px;
+    text-align: center;
+    width: 100%;
+    min-height: 110px;
+    height: auto;
+    color: #445963;
+    border-color: black;
+    border-width: 1px;
+}
+
+.subscribeStaticBlue {
+    background-image: linear-gradient(220deg, rgba(255, 255, 255, 0.95) 0%, rgb(194, 233, 251) 110%);
+    box-shadow: 0 0 4px 1px #a1c3fe;
+    padding: 10px 50px 50px 50px;
+    border-radius: 1px;
+    width: 100%;
+    min-height: 110px;
+    height: auto;
+    color: #445963;
+    border-color: black;
+    border-width: 1px;
+}
+
+.gradientWhite {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f1f1f1+50,e1e1e1+51,f6f6f6+100;White+Gloss+%231 */
+    background: #ffffff;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 95%) 50%, hsl(0, 0%, 88%) 51%, hsl(0, 0%, 96%) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 95%) 50%, hsl(0, 0%, 88%) 51%, hsl(0, 0%, 96%) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, hsl(0, 0%, 100%) 0%, hsl(0, 0%, 95%) 50%, hsl(0, 0%, 88%) 51%, hsl(0, 0%, 96%) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0);
+    /* IE6-9 */
+    color: #445963;
+    border-color: black;
+    border-width: 1px;
+    border-radius: 1px;
+    box-shadow: 0 0 4px 1px #cccccc;
+}
+
+.gradientBlue {
+    background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
+}
+
+
+/* Iamge:: Email Logo  */
+
+.subscribe img {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Title Card subscribe  */
+
+.subscribe h2 {
+    text-transform: uppercase;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 27px;
+}
+
+
+/* Description of the "card subscribe" */
+
+.subscribe p {
+    font-family: 'Source Sans Pro', sans-serif;
+    letter-spacing: 0;
+    margin-top: 3px;
+    font-size: 16px;
+}
+
+
+/* email input 
+input[type=email]  {
+	font-family: 'PT Sans', sans-serif;
+	background-color: transparent;
+	text-align: center;
+	width: 100%;
+	color: #445963;
+	padding: 10px;
+	border: none;
+	outline: none;
+	margin-bottom: 30px;
+	margin-top: 18px;
+	font-size: 15px;
+	font-style: italic;
+	border-bottom: 2px solid #A1C3FE;
+}*/
+
+
+/* Button transmitter subscribe */
+
+#botonx {
+    box-shadow: 0 0 6px 1px #a1c3fe;
+    padding: 10px 21 12px 21px;
+    transition: 0.3s linear;
+    background: #40C4FF;
+    border-radius: 20px;
+    margin-top: 3px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#botonx:hover {
+    cursor: pointer;
+    transform: translatey(-3px);
+    box-shadow: 0 0 6px #a1c3fe;
+}
+
+#botonx:active {
+    transform: translatey(3px);
+    box-shadow: 0 0 0px #a1c3fe;
+}
+
+.fa {
+    color: #fff;
+}
+
+#userList {
+    display: none;
+}
+
+#loader {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    top: 40%;
+}
+
+.webSearch {
+    padding: 10px;
+    background: #FFF;
+    width: 1000px;
+    font-size: 80%;
+    border: 0px #ccc solid;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    ox-shadow: 0 0 4px 1px #a1c3fe;
+}
+
+#content p {
+    text-indent: 20px;
+    text-align: justify;
+}
+
+#pagingControls ul {
+    display: inline;
+    padding-left: 0.5em
+}
+
+#pagingControls li {
+    display: inline;
+    padding: 0 0.5em
+}
+
+#search table,
+#search td {
+    border-right: 1px solid #fff;
+    border-left: 1px solid #e8e8e8;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 10px 15px;
+    position: relative;
+    transition: all 300ms;
+}
+
+#search td:first-child {
+    box-shadow: inset 1px 0 0 #fff;
+}
+
+#search td:last-child {
+    border-right: 1px solid #e8e8e8;
+    box-shadow: inset -1px 0 0 #fff;
+}
+
+#search th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 2px 10px;
+    border-radius: 1px;
+    text-align: center;
+    width: 100%;
+   /* min-height: 110px;*/
+    height: auto;
+    color: #445963;
+    border-color: black;
+    border-width: 1px;
+}
+
+#search tr {
+    background: url(https://jackrugile.com/images/misc/noise-diagonal.png);
+}
+
+#search tr:nth-child(odd) td {
+    background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png);
+}
+
+#search tr:last-of-type td {
+    box-shadow: inset 0 -1px 0 #fff;
+}
+
+#search tr:last-of-type td:first-child {
+    box-shadow: inset 1px -1px 0 #fff;
+}
+
+#search tr:last-of-type td:last-child {
+    box-shadow: inset -1px -1px 0 #fff;
+}
+
+#search tbody:hover td {
+    color: transparent;
+    text-shadow: 0 0 0px #aaa;
+}
+
+#search tbody:hover tr:hover td {
+    color: #444;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.01);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.01);
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.01);
+    transition: all 200ms ease-in;
+    transform: scale(1.01);
+}
+
+#search th {
+    cursor: pointer;
+    background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
+    border-left: 1px solid #555;
+    border-right: 1px solid #777;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #333;
+    box-shadow: inset 0 1px 0 #999;
+    color: #fff;
+    font-weight: none;
+    padding: 7px 5px;
+    position: relative;
+    font-size: 13px;
+    text-shadow: 0 1px 0 #000;
+}
+
+
+/* Paginacion */
+
+.paginate {
+    text-align: left;
+    font-size: 16px;
+}
+
+.paginate ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.paginate li {
+    display: inline;
+}
+
+.paginate a {
+    font-size: 16px;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px;
+    margin: 1px 2px;
+    padding: 5px 10px;
+    display: inline-block;
+    border-top: 1px solid #fff;
+    text-decoration: none;
+    color: #717171;
+    font-family: "Helvetica Neueu", Helvetica, Arial, sans-serif;
+    text-shadow: white 0 1px 0;
+    background-color: #f5f5f5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#eaeaea));
+    background-image: -webkit-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: -moz-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: -ms-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: -o-linear-gradient(top, #f9f9f9, #eaeaea);
+    background-image: linear-gradient(top, #f9f9f9, #eaeaea);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorStr='#f9f9f9', EndColorStr='#eaeaea');
+}
+
+.paginate a:first-child,
+.paginate a.first {
+    margin-left: 0;
+}
+
+.paginate a:last-child,
+.paginate a.last {
+    margin-right: 0;
+}
+
+.paginate a:hover,
+.paginate a:focus {
+    border-color: #fff;
+    background-color: #fdfdfd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#fafafa));
+    background-image: -webkit-linear-gradient(top, #fefefe, #fafafa);
+    background-image: -moz-linear-gradient(top, #fefefe, #fafafa);
+    background-image: -ms-linear-gradient(top, #fefefe, #fafafa);
+    background-image: -o-linear-gradient(top, #fefefe, #fafafa);
+    background-image: linear-gradient(top, #fefefe, #fafafa);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorStr='#fefefe', EndColorStr='#fafafa');
+}
+
+.paginate a.more {
+    box-shadow: 0 0 0 0 transparent;
+    border: 0 none;
+    background: transparent;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.paginate a.active {
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 0 0 inset;
+    border-color: #505050;
+    color: #f2f2f2;
+    text-shadow: black 0 1px 0;
+    background-color: #676767;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#5f5f5f), to(#5c5c5c));
+    background-image: -webkit-linear-gradient(top, #5f5f5f, #5c5c5c);
+    background-image: -moz-linear-gradient(top, #5f5f5f, #5c5c5c);
+    background-image: -ms-linear-gradient(top, #5f5f5f, #5c5c5c);
+    background-image: -o-linear-gradient(top, #5f5f5f, #5c5c5c);
+    background-image: linear-gradient(top, #5f5f5f, #5c5c5c);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorStr='#5f5f5f', EndColorStr='#5c5c5c');
+}
+
+.pl1 {
+    padding-left: 1px;
+}
+.pl2 {
+    padding-left: 2px;
+}
+.pl3 {
+    padding-left: 3px;
+}
+.pl4 {
+    padding-left: 4px;
+}
+.pl5 {
+    padding-left: 5px;
+}
+.pl6 {
+    padding-left: 6px;
+}
+.pl7 {
+    padding-left: 7px;
+}
+.pl8 {
+    padding-left: 8px;
+}
+.pl9 {
+    padding-left: 9px;
+}
+
+.ml1{
+    margin-left: 1px;
+}
+.ml2{
+    margin-left: 2px;
+}
+.ml3{
+    margin-left: 3px;
+}
+.ml4{
+    margin-left: 4px;
+}
+.ml5{
+    margin-left: 5px;
+}
+.ml6{
+    margin-left: 6px;
+}
+.ml7{
+    margin-left: 7px;
+}
+.ml8{
+    margin-left: 8px;
+}
+.ml9{
+    margin-left: 9px;
+}
+.ml10{
+    margin-left: 10px;
+}
+
+.editor{
+    overflow-y: scroll; height: 320px; margin-top: 0px;
+}
+
+/* Texto de projecto GRID */
+.txtProject{
+    font-weight: bold;
+    left:10px;
+}
+/* Paginacion https://webgradients.com/ */
