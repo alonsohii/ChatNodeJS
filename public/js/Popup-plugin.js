@@ -30,7 +30,7 @@ function createToolTipChat(args){
 		defaultOptions: {
 			content: "",	//left blank, must be set when new options passed through
 			position: "top",	//where the popup will show by default- top. Other options: right, bottom, or left
-			style: "",	//default no style, will revert to default colours. Other options: blue, red, green, custom
+			style: "padding-left: 15px;",	//default no style, will revert to default colours. Other options: blue, red, green, custom
 			animation: "standard",	//Standard animation by default. Other options: flip, grow, bounce
 			event: "click",	//Default set to "click", can also be set to hover
 			hideOnClick: true,	//When true, clicking off the menu closes it. When false, only clicking on the menu closes it
@@ -212,6 +212,7 @@ function createToolTipChat(args){
 
 //************************************************************************************
 	$.fn.popup = function(options) {
+		debugger;
 		return this.each(function() {
 			var popobject = Object.create(Popup);
 			popobject.init(options, this);

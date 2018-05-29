@@ -45,6 +45,7 @@
     cursor: pointer
 }
 
+
 .popupTheme i, .popupThemered i, .popupThemeblue i, .popupThemegreen i, .popupThemecustom i {
     width: 20px;
     height: 20px;
@@ -106,7 +107,7 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -7px;
+    margin-left: -65px;
     border-width: 7px;
     border-style: solid;
     border-color: #333 transparent transparent transparent;
@@ -221,10 +222,12 @@
     width: 20px;
     height: 20px;
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     text-decoration: none;
     float: left;
+    margin-top: 16px;
 }
+
 
 .item-side {
     float: none !important;
@@ -239,7 +242,9 @@
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -5px;
+    margin-left: -1px;
+    padding-left: 16px;
+    margin-top: -11px;
 }
 
 .pop-bottom {
@@ -294,7 +299,7 @@
 }
 /************************************************/
 .animate-grow {
-  -webkit-animation: animateGrow 0.4s 1 ease;
+  -webkit-animation: animateGrow 0.2s 1 ease;
 }
 
 @-webkit-keyframes animateGrow {
@@ -326,7 +331,7 @@
 }
 /************************************************/
 .animate-flip {
-  -webkit-animation: animateFlip 0.4s 1 ease;
+  -webkit-animation: animateFlip 0.2s 1 ease;
 }
 
 @-webkit-keyframes animateFlip {
@@ -352,7 +357,7 @@
 }
 /***************************************************/
 .animate-bounce {
-  -webkit-animation: animateBounce 0.4s 1 ease-out;
+  -webkit-animation: animateBounce 0.2s 1 ease-out;
 }
 
 @-webkit-keyframes animateBounce {

@@ -2,13 +2,11 @@
 ;(function($) {
 	$(document).ready(function() {
 
-
-
 		$(document).on('click', '#clickEmotic',function(){
 
 			debugger;
 			var  valor = $(this).attr('alt');
-			var  textarea = $(this).parent().parent().parent().parent().find('#comment');
+			var  textarea = $(this).parent().parent().parent().parent().find('#commentRow');
 			textarea.val(textarea.val() + valor);
 
 	   });
