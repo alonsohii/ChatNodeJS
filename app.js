@@ -13,12 +13,16 @@ var express = require('express'),
     UsuariosCtrl = require('./app/controllers/users'),
     PaisesCtrl = require('./app/controllers/catpaises'),
     Middleware = require('./app/middleware'),
-    Helper = require('./app/helpers/general'),
+	Helper = require('./app/helpers/general'),
+    bodyParser = require('body-parser');
 
 	users = {};
 
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json 
+app.use(bodyParser.json())
 
 var i18n = require('i18n');
 
@@ -39,8 +43,8 @@ i18n.configure({
 
 app.use(i18n.init);
 
-server.listen(3000);
- console.log("localhost:3000");
+server.listen(8080);
+ console.log("localhost:8080");
 
 mongoose.connect('mongodb://localhost/chat', {
   useMongoClient: true,
@@ -219,10 +223,15 @@ io.sockets.on('connection',function(socket){
 
 });
 
-var Modulo = require('./app/modules/pages.js')({Helper:Helper, app:app});
+var Modulo = require('./app/modules/pages.js')({
+	Helper:Helper,
+	PaisesCtrl:PaisesCtrl,
+	UsuariosCtrl :UsuariosCtrl,
+	app:app
+});
 
 var Modulo = require('./app/modules/api.js')({
-    AutCtrl: AutCtrl,
+	AutCtrl: AutCtrl,
     Middleware: Middleware
 });
 

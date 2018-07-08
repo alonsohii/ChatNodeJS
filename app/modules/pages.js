@@ -1,22 +1,20 @@
-module.exports = function(params,callback) {
+module.exports = function(p,callback) {
 
-   /* this.UsuariosCtrl = params.UsuariosCtrl;
-    this.ProyectCtrl = params.ProyectCtrl;
-    this.PaisesCtrl = params.PaisesCtrl;
-    this.Helper = params.Helper;
-    this.app = params.app;
-    */
-     var app = params.app;
-	//this.app.post('/usuario', this.UsuariosCtrl.InsertarUsuario );
+     var app = p.app;
+     
+   // router Post
+    app.post('/usuario', p.UsuariosCtrl.InsertarUsuario );
+    app.post('/reset', p.UsuariosCtrl.RandomPassword );
 
-    params.Helper.Pagina('/panel','panel',{ title: "Panel Chat"},app);
-    params.Helper.Pagina('/admin','admin',{ title: "Admin Chat"},app);
-    params.Helper.Pagina('/reset','reset',{ title: "Reset Chat"},app);
+    // Route ejs Html pages
+    p.Helper.Pagina('/panel','panel',{ title: "Panel Chat"},app);
+    p.Helper.Pagina('/admin','admin',{ title: "Admin Chat"},app);
+    p.Helper.Pagina('/reset','reset',{ title: "Reset Chat"},app);
 
-	params.Helper.Pagina('/registro','registro',{ title: "Registro de Usuarios"} , app);
-	params.Helper.Pagina('/login','login',{ title: "Registro de Usuarios"} , app);
-
-
+	p.Helper.Pagina('/registro','registro',{ title: "Registro de Usuarios"} , app);
+    p.Helper.Pagina('/login','login',{ title: "Registro de Usuarios"} , app);
+    
+    app.get('/paises', p.PaisesCtrl.CatalogoPaises );
 
 //	this.app.get('/setup', this.UsuariosCtrl.UsuarioMongoDb);
 
