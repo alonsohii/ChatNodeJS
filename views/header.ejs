@@ -1,0 +1,39 @@
+
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation" >
+        <div class="container">
+            <a  id="userHeader" class="navbar-brand" href="#"></a>
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/home">Home</a>
+                </li>
+                <li>
+                    <a href="/registro">Registro</a>
+                </li>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+                <li>
+                    <a href="/generar">Reset Password</a>
+                </li>
+
+                <li>
+                    <a href="/createproject">New Project</a>
+                </li>
+
+                <li>
+                    <a href="/search">Search</a>
+                </li>
+                <li>
+                    <a href="/search2">Search Api</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        $.get("http://localhost:8080/api/?token=" + localStorage.getItem('tk'), function(data, status) {
+            debugger;
+            $('#userHeader').html(data.correo);
+        });
+    </script>

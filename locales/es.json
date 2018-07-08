@@ -1,0 +1,17 @@
+{
+    "name": "Nombre:",
+    "username": "Usuario:",
+    "password": "Contraseña:",
+    "password2": "Repetir Contraseña:",
+    "email": "Correo eletronico:",
+    "firstname": "Primer Apellido:",
+    "secondname": "Segundo Apellido:",
+    "buscar": "Buscar",
+    "registrar": "Registrar Usuario",
+    "tituloregistro": "Registrar nuevo usuario",
+    "pais": "Pais:",
+    "estado": "Estado:",
+    "genero": "Genero:",
+    "botonregistro":"Registro"
+
+}
