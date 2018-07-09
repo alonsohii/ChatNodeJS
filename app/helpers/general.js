@@ -37,7 +37,7 @@ module.exports.Query = function(callback, sql, db) {
             else
                 callback(rows);
         else
-            callback(null);
+            callback("|Error:| ("+err.message+") |Query:| ("+err.sql+")");
     });
 
 }

@@ -1,0 +1,17 @@
+db.messages.createIndex({"$**":"text"}) >> Document entire index
+  + https://code.tutsplus.com/tutorials/full-text-search-in-mongodb--cms-24835
+* db.getCollection('proymodels').find({$text: {$search: "chachalaca"}})  search index
+
+
+index multiple or onlye\
+	
+db.messages.createIndex({"subject":"text","content":"text"})
+
+db.getCollection('proymodels').createIndex({"descripcioncorta":"text","nombre":"text"})
+
+==================================================================================s
+
+
+
+
+

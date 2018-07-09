@@ -42,18 +42,14 @@
                         $.post("http://localhost:8080/usuario", CamposJson('#firstName,#pw,#email,#ComboPaises'))
                             .done(function(data) {
 
-                                if (data.usuario == 1 && !data.success) {
-                                    Error('Este usuario ya se encuentra registrado.');
-                                } else {
+                                if(data.success == 1){
+                                    $("#Correcto").hide(50);
+                                    $("#Correcto").show(350);
+                                    Error(data.mensaje);
+                                }else{
+                                    Error(data.mensaje);
 
-                                    if (!data.success) {
-                                        Error('Este correo ya se encuentra registrado.');
-                                    } else {
-                                        $("#Correcto").hide(50);
-                                        $("#Correcto").show(350);
-                                    }
                                 }
-
                             });
 
                     } else {

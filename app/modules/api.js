@@ -4,7 +4,7 @@ module.exports = function(params, callback) {
     // get an instance of the router for api routes
     // ---------------------------------------------------------
 
-    var apiRoutes = this.express.Router();
+    var apiRoutes = params.express.Router();
 
     // ---------------------------------------------------------
     // authentication (no middleware necessary since this isnt authenticated)
@@ -42,6 +42,7 @@ module.exports = function(params, callback) {
         res.json(req.decoded);
     });
 
-    app.use('/api', apiRoutes);
+    params.app.use('/api', apiRoutes);
+  //  callback();
 
 }

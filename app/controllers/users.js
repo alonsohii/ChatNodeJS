@@ -44,7 +44,7 @@ exports.InsertarUsuario = function(req, res) {
 
                 if (data == 'nodata') {
 
-                    db.query('INSERT INTO bp_personas SET ?', usuario, function(err, ress) {
+                    db.query('INSERT INTO nc_personas SET ?', usuario, function(err, ress) {
 
                         if (!err) {
 
@@ -57,7 +57,8 @@ exports.InsertarUsuario = function(req, res) {
                                 } else {
                                     console.log('Last insert ID:', ress.insertId);
                                     res.json({
-                                        success: true
+                                        success: true,
+                                        mensaje:"Usuario registrado con exito."
                                     });
 
                                     /*   Helper.mail({
@@ -70,7 +71,7 @@ exports.InsertarUsuario = function(req, res) {
 
                                 }
 
-                            }, "SELECT idbp_personas FROM bp_personas ed  WHERE ed.correo= '" + usuario.correo + "' and ed.nombre = '" + usuario.nombre + "'", db);
+                            }, "SELECT idbp_personas FROM nc_personas ed  WHERE ed.correo= '" + usuario.correo + "' and ed.nombre = '" + usuario.nombre + "'", db);
 
                         } else {
                             res.status(400);
@@ -82,20 +83,28 @@ exports.InsertarUsuario = function(req, res) {
                 } else {
                     res.json({
                         success: false,
-                        correo: 1
+                        mensaje: "Este correo ya se encuentra registrado"
                     });
                 }
 
-            }, "SELECT idbp_personas FROM bp_personas ed  WHERE ed.correo= '" + usuario.correo + "'", db);
+            }, "SELECT idbp_personas FROM nc_personas ed  WHERE ed.correo= '" + usuario.correo + "'", db);
 
-        } else {
-            res.json({
-                success: false,
-                usuario: 1
-            });
+        } else{
+            if(data.indexOf('Error') != -1){
+                res.json({
+                    success: false,
+                    mensaje: data
+                });
+            }else{
+                res.json({
+                    success: false,
+                    mensaje: "Este nombre de usuario ya se encuentra registrado."
+             });
+            }
+
         }
 
-    }, "SELECT idbp_personas FROM bp_personas ed  WHERE ed.username= '" + usuario.username + "'", db);
+    }, "SELECT idbp_personas FROM nc_personas ed  WHERE ed.username= '" + usuario.username + "'", db);
 
 }
 
@@ -117,7 +126,7 @@ exports.RandomPassword = function(req, res) {
                 .update(pass)
                 .digest('hex');
 
-            var sql = 'UPDATE bp_personas SET pw = ? WHERE correo = ?';
+            var sql = 'UPDATE nc_personas SET pw = ? WHERE correo = ?';
             console.log(usuario.email);
             db.query(sql, [hash, usuario.email], function(err, ress) {
 
@@ -151,7 +160,7 @@ exports.RandomPassword = function(req, res) {
             res.status(400);
         }
 
-    }, "SELECT idbp_personas FROM bp_personas ed  WHERE ed.correo= '" + usuario.email + "'", db);
+    }, "SELECT idbp_personas FROM nc_personas ed  WHERE ed.correo= '" + usuario.email + "'", db);
 
 }
 
@@ -209,7 +218,7 @@ exports.GetUsers = function(req, res) {
             });
             res.status(400);
         }
-    }, "select * from freelancer.bp_personas", db);
+    }, "select * from nc_personas", db);
 
 }
 
@@ -226,6 +235,6 @@ exports.GetUsersOnline = function(req, res) {
             });
             res.status(400);
         }
-    }, "select * from freelancer.bp_personas where  idbp_personas in( " + Globalonline.toString() + " )", db);
+    }, "select * from nc_personas where  idbp_personas in( " + Globalonline.toString() + " )", db);
 
 }

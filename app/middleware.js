@@ -19,7 +19,7 @@ exports.Verificar = function(req, res, next) {
 			if (err) {
 				return res.json({ success: false, message: 'Failed to authenticate token.' });		
 			} else {
-				  console.log(Globalonline);
+				 // console.log(Globalonline);
 
 
 				req.decoded = decoded;
